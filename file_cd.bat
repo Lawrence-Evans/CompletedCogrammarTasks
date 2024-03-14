@@ -1,0 +1,4 @@
+mkdir folder1 folder2 folder3
+cd folder1
+mkdir folder4ChildOf1 folder5ChildOf1 folder6ChildOf1
+rmdir folder4ChildOf1 folder6ChildOf1
