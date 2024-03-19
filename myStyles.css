@@ -1,0 +1,66 @@
+body {
+    background-color: bisque;
+    margin: 1%;
+}
+
+#intro {
+    text-align: center; margin-left: 25%; margin-right: 25%;
+}
+
+figcaption {
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+}
+
+#timeline {
+    text-align: left;
+}
+
+#bibliography {
+    text-align: left;
+}
+
+ul {
+    list-style-position: inside;
+    }
+
+img {
+    border-radius: 20%;
+    border: 5px solid cadetblue;
+}
+
+h1, h2, h3 {
+    font-family: 'Times New Roman';
+    font-style: italic;
+}
+
+h1 {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+div {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+nav {
+    text-align: center;
+}
+
+aside { 
+    text-indent: 30px;
+}
+
+.classSelector {
+    font-size: 25px;
+    line-height: 20px;
+    font-family: monospace;
+    padding: 4px;
+    margin-left: 6px;
+    text-align: center;
+}
