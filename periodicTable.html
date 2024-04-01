@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Periodic Table</title>
+    <link rel="stylesheet" href="myStylesPeriodicTable.css">
+</head>
+<body id="main">
+    <picture>
+        <img src="periodic_table_complete.png" alt="Responsive Picture" style="width: 475px;;" />
+    </picture>
+
+    <ul><u>Key</u>
+        <li><b>Top</b> <i>Atomic number</i></li>
+        <li><b>Middle</b> <i>Chemical Symbol</i></li>
+        <li><b>Bottom</b > <i>Name</i></li>
+    </ul>
+
+<div class="element-table" id="element-table">
+    <script>
+        // Declaring variables
+        atomicNumber = []
+        elementSymbol = []
+        elementName = []
+        i = 0;
+
+        // Function that creates and appends divs for each element. Filling with values from JSON.
+        function createElements (i, r, className) {
+            while (i < r) {
+            var div = document.createElement("div");
+            div.className = className;
+            // Each element is numbered for grid manipulation.
+            div.id = "element" + i;
+            document.getElementById("element-table").appendChild(div);
+            div.innerHTML = atomicNumber[i] + "<br>" + elementSymbol[i] + "<br>" + elementName[i];
+            document.getElementById("element-table").appendChild(div);
+            i++;
+            }
+        };
+
+        // Uses json in folder to fetch element data and push it to variables.
+        function fetchElements() {
+            return fetch("https://raw.githubusercontent.com/Bowserinator/Periodic-Table-JSON/master/PeriodicTableJSON.json")
+                .then(response => response.json())
+                .catch((error) => {
+                    console.log(error);
+                });
+            }
+            
+            (async () => {
+                var contents = await fetchElements();
+
+                contents.elements.forEach (element => {
+                    atomicNumber.push(element.number);
+                    elementSymbol.push(element.symbol);
+                    elementName.push(element.name);
+                });
+            // Calling function to create elements inside async. If not the elements are created without json data. 
+            createElements(0, 56, "element");
+            createElements(72, 87, "element");
+            createElements(87, 89, "element");
+            createElements(104, 119, "element");
+            createElements(57, 71, "lanthanide");
+            createElements(89, 103, "actinide");
+            console.log(atomicNumber, elementSymbol, elementName);
+            })();
+
+        // Because of timing these will be empty arrays.
+        console.log(atomicNumber, elementSymbol, elementName);
+    </script>
+</div>
+</body>
+</html>
