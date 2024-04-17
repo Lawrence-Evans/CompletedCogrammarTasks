@@ -1,0 +1,115 @@
+@media screen and (min-width: 500px) {
+    picture {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    div, ul {
+        display: none;
+    }
+}
+
+body {
+    background-color: lightgray;
+}
+
+.element-table {
+    display: grid;
+    grid-template-columns: repeat(18, 1fr);
+}
+
+.element {
+    background-color: green;
+    border: 1px solid black;
+    border-radius: 10%;
+    padding: 6%;
+    margin: 1%;
+    text-align: center;
+}
+
+@media screen and (max-width: 1500px) {
+    .element {
+        background-color: green;
+        border: 1px solid black;
+        border-radius: 10%;
+        padding: 6%;
+        text-align: center;
+        font-size: 60%;
+        color: white;
+    }
+}
+
+#element1 {
+    grid-column: 18/19;
+}
+
+#element4 {
+    grid-column: 13/14;
+}
+
+#element12 {
+    grid-column: 13/14;
+}
+
+#element56 {
+    grid-column: 4;
+}
+
+#element72 {
+    grid-column: 4;
+}
+
+#element104 {
+    grid-column: 4;
+}
+
+.lanthanide {
+    background-color: red;
+    border: 1px solid black;
+    border-radius: 5%;
+    padding: 10%;
+    margin: 1%;
+    text-align: center;
+}
+
+@media screen and (max-width: 1500px) {
+    .lanthanide {
+        background-color: red;
+        border: 1px solid black;
+        border-radius: 5%;
+        padding: 10%;
+        text-align: center;
+        font-size: 60%;
+        color: white;
+    }
+}
+
+#element57 {
+    grid-column: 4;
+}
+
+.actinide {
+    background-color: blue;
+    border: 1px solid black;
+    border-radius: 5%;
+    padding: 10%;
+    margin: 1%;
+    text-align: center;
+}
+
+@media screen and (max-width: 1500px) {
+    .actinide {
+        background-color: blue;
+        border: 1px solid black;
+        border-radius: 5%;
+        padding: 10%;
+        text-align: center;
+        font-size: 60%;
+        color: white;
+    }
+}
+
+#element89 {
+    grid-column: 4;
+}
