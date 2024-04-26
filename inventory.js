@@ -35,15 +35,15 @@ function shoesHighestValue(array) {
     console.table(highestShoe);
 };
 
-// Edit shoe properties.
-function editName(array, newName) {
-    array[name].newName = newName;
-    console.table(shoeInventory);
+// Edit shoe properties by accessing object from index of the array.
+function editName(array, index, newName) {
+    if (index >= 0 && index < array.length) {
+        array[index].name = newName;
+        console.table(array);
+    } else {
+        console.log("Invalid index.");
+    }
 };
-
-// Object.defineProperty(obj, "add", {
-//     set : function (value) {this.counter += value;}
-//   });
 
 
 // Order array of objects in ascending valuePerItem. Assiging valuePerItem to a and b
@@ -75,9 +75,10 @@ console.table(shoeInventory);
 // shoesLowestValue(shoeInventory);
 // shoesHighestValue(shoeInventory);
 // orderByAscending(shoeInventory);
+// editName(shoeInventory, 0, "Dogans");
+// shoeSearchName(shoeInventory, "Dogans");
 
 
-// editName(shoeInventory.Rogans, Dogans);
 
 
 
