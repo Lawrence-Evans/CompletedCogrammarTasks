@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget</title>
+</head>
+
+<body>
+    <h1>Your Budget</h1>
+    <div>
+        <p id="displayDisposable">£0</p>
+    </div>
+    <div>
+        <p id="displaySavings">£0</p>
+    </div>
+    <div>
+        <p id="displayLeftover">£0</p>
+    </div>
+    <button onclick="showIncomes()">Show incomes</button>
+    <button onclick="showExpenses()">Show expenses</button>
+    <button onclick="putIntoSavings()">Put income into savings</button>
+
+    <h2>Add New Income</h2>
+    <label for="name">Enter income name: </label>
+    <input type="text" name="name" id="incomeName" onfocus="this.value=''" required>
+    <br>
+    <label for="amount">Enter income amount: </label>
+    <input type="text" name="amount" id="incomeAmount" onfocus="this.value=''" required>
+    <br>
+    <label for="recurring">Enter true of false for recurring: </label>
+    <input type="text" name="recurring" id="incomeRecurring" onfocus="this.value=''" required>
+    <br>
+    <button onclick="addIncome()">Create new income</button>
+    <br>
+
+    <h2>Add new expenses</h2>
+    <label for="name">Enter expense name: </label>
+    <input type="text" name="name" id="expenseName" onfocus="this.value=''" required>
+    <br>
+    <label for="amount">Enter expense amount: </label>
+    <input type="text" name="amount" id="expenseAmount" onfocus="this.value=''" required>
+    <br>
+    <label for="recurring">Enter true of false for recurring: </label>
+    <input type="text" name="recurring" id="expenseRecurring" onfocus="this.value=''" required>
+    <br>
+    <button onclick="addExpense()">Create new expense</button>
+    <script type='text/javascript' src='./budgetSiteJS.js'></script>
+</body>
+
+</html>

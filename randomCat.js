@@ -4,7 +4,7 @@
 async function randomCat() {
   const url = "http://thecatapi.com/api/images/get?format=src&type=gif";
 
-  // Warpped in try/catch block to handle errors
+  // Wrapped in try/catch block to handle errors
   try {
     // Fetch the image URL directly using await
     const response = await fetch(url);
