@@ -52,26 +52,29 @@ Remember that the basic syntax for an arrow function is :
 // Insert your code for step 1 below this comment:
 */
 
-// // Removed arrows and added the word function before the corresponding parameter.
+// Removed arrows and added the word function before the corresponding parameter.
+// !NEW! Also needing a return to for res.json() statement.
 fetch("https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699")
-    .then(res => res.json())
-    .then(function(result) {
-          items = result.items;
-          console.log(items);
-        }),
-      function (error) {
-       console.log(error);
-      } 
+  .then(function(res) {return res.json()})
+  .then(function(result) {
+        items = result.items;
+        console.table(items);
+      }),
+    function (error) {
+      console.log(error);
+    }
+  
 
 /* Step 2: Rewrite the above code using an async/await function below. */
 
 
 // // Answer for Step 2 + 3
-// // Refactored the fetch into a function so async and await could be used. Then accessing only index of the 
+// // Refactored the fetch into a function so async and await could be used. Then accessing the only index of the 
 // // items object and the specific value to be displayed. Finally calling the function.
+// // !NEW! Also needing a return to for res.json() statement.
 // async function fetchBook () {
 //     await fetch("https://www.googleapis.com/books/v1/volumes?q=isbn:0747532699")
-//     .then(res => res.json())
+//     .then(function(res) {return res.json()})
 //     .then(function(result) {
 //           items = result.items;
 //           console.log(items[0].volumeInfo.title);

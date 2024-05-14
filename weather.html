@@ -6,21 +6,25 @@
   <body>
     <h1>Current Weather in Paris</h1>
     <!-- div to create p inside and display the returned data from the api request -->
-    <div id="display"></div>
+    <div id="temperature"></div>
+    <div id="humidity"></div>
+    <div id="precipitation"></div>
     <script>
     // Empty array for the api return to be stored as.
     let report = []; 
 
     // Fetch api function asynchronously and awaits. Console tabling the object and 
     // creating a p element to display the strigfied object. Finally calling the function.
+    // !NEW! Removed unused code and accessed relervant weather info directly instead of the whole object. 
     async function fetchWeather () {
         await fetch("https://api.open-meteo.com/v1/forecast?latitude=48.8534&longitude=2.3488&current=temperature_2m,relative_humidity_2m,precipitation")
         .then(res => res.json())
         .then(function(result) {
             report = result;
             console.table(report);
-            let displayWeather = document.createElement("p");
-            document.getElementById("display").innerHTML = JSON.stringify(report);
+            document.getElementById("temperature").innerHTML = "Temperature: " + report.current.temperature_2m + " " + report.current_units.temperature_2m;
+            document.getElementById("humidity").innerHTML = "Relative Humidity: " + report.current.relative_humidity_2m + " " + report.current_units.relative_humidity_2m;
+            document.getElementById("precipitation").innerHTML = "Precipitation : " + report.current.precipitation + " " + report.current_units.precipitation;
             }),
         function (error) {
         console.log(error);
