@@ -24,7 +24,7 @@ class Expense {
 
 // Creating income objects. Their total is 2481.
 let salary = new Income("Salary", 2000, true);
-let commisions = new Income("Comissions", 250, false);
+let commissions = new Income("Commissions", 250, false);
 let stocksAndShares = new Income("Investments", 155, true);
 let ebaySales = new Income("Ebay Sales", 75, false);
 let backOfTheSofa = new Income("Back of the Sofa", 1, true);
@@ -41,7 +41,7 @@ function mySession() {
   if (sessionStorage.getItem("previousSession") === null) {
     allIncomes.push(
       salary,
-      commisions,
+      commissions,
       stocksAndShares,
       ebaySales,
       backOfTheSofa
@@ -78,7 +78,7 @@ document.getElementById("displayDisposable").innerHTML = "Current disposable inc
 document.getElementById("displaySavings").innerHTML = "Current savings : £" + savings;
 document.getElementById("displayLeftover").innerHTML = "Leftover disposable income : £" + (disposableIncome - savings);
 
-// All button fucntions are triggered my onclick in html.
+// All button functions are triggered my onclick in html.
 // Show income function.
 let showIncomes = () => {
   alert(sessionStorage.getItem("seshAllIncomes"));
@@ -131,3 +131,10 @@ function putIntoSavings() {
       // Page reload to update displayed values.
     location.reload();
 };
+
+// Showing incomes as page is loaded.
+// This gives one alert
+// alert(JSON.stringify(allIncomes));
+
+// Calling showIncome gives two alerts, the second is undefined? Possibly due to using an arrow function.
+// alert(showIncomes());

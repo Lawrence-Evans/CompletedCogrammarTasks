@@ -14,8 +14,8 @@
     let report = []; 
 
     // Fetch api function asynchronously and awaits. Console tabling the object and 
-    // creating a p element to display the strigfied object. Finally calling the function.
-    // !NEW! Removed unused code and accessed relervant weather info directly instead of the whole object. 
+    // creating a p element to display the stringified object. Finally calling the function.
+    // !NEW! Removed unused code and accessed relevant weather info directly instead of the whole object. 
     async function fetchWeather () {
         await fetch("https://api.open-meteo.com/v1/forecast?latitude=48.8534&longitude=2.3488&current=temperature_2m,relative_humidity_2m,precipitation")
         .then(res => res.json())
